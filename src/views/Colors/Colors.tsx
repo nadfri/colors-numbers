@@ -1,0 +1,53 @@
+import React, { useState } from "react";
+import "./Colors.scss";
+import Circle from "../../components/Circle/Circle";
+import Modal from "../../components/Modal/Modal";
+
+export default function Colors() {
+  const colors = [
+    "red",
+    "magenta",
+    "orange",
+    "#ffd59e",
+    "#7f3b1e",
+    "yellow",
+    "lime",
+    "blue",
+    "indigo",
+    "white",
+    "gray",
+    "black",
+  ];
+
+  const [colorSelect, setColorSelect] = useState<string>("");
+  const [showModal, setShowModal] = useState<boolean>(false);
+
+  function openModal(e: Event, color: string) {
+    e.preventDefault();
+    setColorSelect(color);
+    setShowModal(true);
+  }
+
+  function handleCloseModal() {
+    setShowModal(false);
+  }
+
+  return (
+    <div className="Colors">
+      {colors.map((color, index) => (
+        <Circle
+          key={index}
+          backgroundColor={color}
+          handleClick={(e: Event) => openModal(e, color)}
+        />
+      ))}
+
+      {/* {showModal && <Modal color={color} handleCloseModal={handleCloseModal}/>}  */}
+      {showModal && (
+        <Modal handleCloseModal={handleCloseModal}>
+          <Circle backgroundColor={colorSelect} />
+        </Modal>
+      )}
+    </div>
+  );
+}

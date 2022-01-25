@@ -1,0 +1,57 @@
+.Modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s forwards;
+
+  .container {
+    width: 50%;
+    max-width: 500px;
+    animation: zoom 0.5s forwards;
+
+    &.dezoom {
+      animation: dezoom 0.5s forwards;
+    }
+  }
+
+  &.fadeOut {
+    animation: fadeOut 0.5s forwards;
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale3d(0, 0, 0);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes dezoom {
+
+  to {
+    transform: scale3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  to {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}

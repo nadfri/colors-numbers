@@ -1,0 +1,8 @@
+.Colors{
+  height: 100%;
+  display:grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 0 5px;
+}

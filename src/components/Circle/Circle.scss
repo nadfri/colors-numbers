@@ -1,0 +1,28 @@
+.Circle {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  box-shadow: 0px 0px 5px 0px #ffffff;
+  cursor: pointer;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    filter: blur(1px);
+    transform: rotateZ(-30deg);
+
+    background: radial-gradient(
+      circle at 50% 80%,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0) 74%,
+      white 80%,
+      white 84%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+}
