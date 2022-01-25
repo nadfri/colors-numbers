@@ -2,22 +2,10 @@ import React, { useState } from "react";
 import "./Colors.scss";
 import Circle from "../../components/Circle/Circle";
 import Modal from "../../components/Modal/Modal";
+import { colorsOfCircles } from "../../utils/arrayOfColors";
 
 export default function Colors() {
-  const colors = [
-    "red",
-    "magenta",
-    "orange",
-    "#ffd59e",
-    "#7f3b1e",
-    "yellow",
-    "lime",
-    "blue",
-    "indigo",
-    "white",
-    "gray",
-    "black",
-  ];
+
 
   const [colorSelect, setColorSelect] = useState<string>("");
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -34,7 +22,7 @@ export default function Colors() {
 
   return (
     <div className="Colors">
-      {colors.map((color, index) => (
+      {colorsOfCircles.map((color, index) => (
         <Circle
           key={index}
           backgroundColor={color}

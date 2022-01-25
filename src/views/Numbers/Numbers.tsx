@@ -1,30 +1,16 @@
-import React, {useState} from 'react';
-import './Numbers.scss';
+import React, { useState } from "react";
+import "./Numbers.scss";
+import Modal from "../../components/Modal/Modal";
+import Number from "../../components/Number/Number";
 
 export default function Numbers() {
-
-  const [number, setNumber] = useState<string>("");
+  const [number, setNumber] = useState<number>(0);
   const [showModal, setShowModal] = useState<boolean>(false);
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-  const colors = [
-    "red",
-    "magenta",
-    "orange",
-    "aqua",
-    "#7f3b1e",
-    "yellow",
-    "lime",
-    "blue",
-    "indigo",
-    "crimson",
-    "yellowgreen",
-    "violet",
-  ];
-
-
-  function handleClick(e: Event, color:string) {
+  function openModal(e: Event, number: number) {
     e.preventDefault();
-    setNumber((color));
+    setNumber(number);
     setShowModal(true);
   }
 
@@ -34,11 +20,19 @@ export default function Numbers() {
 
   return (
     <div className="Numbers">
-      {colors.map((color, index) => (
-       <div key={index} className='number' style={{color}}>{index+1}</div>
+      {numbers.map((number) => (
+        <Number
+          key={number}
+          number={number}
+          handleClick={(e: Event) => openModal(e, number)}
+        />
       ))}
 
-      {/* {showModal && <Modal color={color} handleCloseModal={handleCloseModal}/>}  */}
+      {showModal && (
+        <Modal handleCloseModal={handleCloseModal}>
+          <Number number={number} />
+        </Modal>
+      )}
     </div>
   );
 }

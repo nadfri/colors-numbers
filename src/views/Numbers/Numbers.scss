@@ -5,15 +5,4 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding: 0 5px;
-
-  .number {
-    font-family: "Titan One", cursive;
-    font-size: 5rem;
-    -webkit-text-stroke: 1px white;
-  }
-
-  div:nth-child(3n + 1):nth-last-child(-n + 3),
-  div:nth-child(3n + 1):nth-last-child(-n + 3) ~ div {
-    font-size: 4.9rem;
-  }
 }

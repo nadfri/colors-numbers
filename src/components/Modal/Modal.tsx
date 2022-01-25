@@ -1,12 +1,11 @@
-import { Component, useRef } from "react";
-import Circle from "../Circle/Circle";
+import { useRef } from "react";
 import "./Modal.scss";
 
 export default function Modal({
   children,
   handleCloseModal,
 }: {
-  children: JSX.Element;
+  children: JSX.Element | string;
   handleCloseModal: any;
 }) {
   const modalRef = useRef<HTMLDivElement>(null);
