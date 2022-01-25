@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Numbers.scss";
 import Modal from "../../components/Modal/Modal";
 import Number from "../../components/Number/Number";
 
@@ -19,7 +18,7 @@ export default function Numbers() {
   }
 
   return (
-    <div className="Numbers">
+    <div className="grid">
       {numbers.map((number) => (
         <Number
           key={number}

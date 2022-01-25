@@ -20,11 +20,7 @@ export default function Modal({
   }
 
   return (
-    // <div className="Modal" onClick={closeModal} ref={modalRef}>
-    //   <div className="container" ref={containerRef}>
-    //     <Circle backgroundColor={color} handleClick={null} />
-    //   </div>
-    // </div>
+
     <div className="Modal" onClick={closeModal} ref={modalRef}>
       <div className="container" ref={containerRef}>
         {children}

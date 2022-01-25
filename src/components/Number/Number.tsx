@@ -1,4 +1,3 @@
-import React from "react";
 import "./Number.scss";
 import { colorsOfNumbers } from "../../utils/arrayOfColors";
 
@@ -13,7 +12,7 @@ export default function Number({
     ? { color: colorsOfNumbers[number - 1] }
     : {
         color: colorsOfNumbers[number - 1],
-        fontSize: "10rem",
+        fontSize: "clamp(35vw,50vw,400px)",
       };
 
   return (

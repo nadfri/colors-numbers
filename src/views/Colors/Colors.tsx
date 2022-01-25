@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Colors.scss";
 import Circle from "../../components/Circle/Circle";
 import Modal from "../../components/Modal/Modal";
 import { colorsOfCircles } from "../../utils/arrayOfColors";
@@ -21,7 +20,7 @@ export default function Colors() {
   }
 
   return (
-    <div className="Colors">
+    <div className="grid">
       {colorsOfCircles.map((color, index) => (
         <Circle
           key={index}

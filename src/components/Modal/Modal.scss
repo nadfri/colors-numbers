@@ -9,7 +9,6 @@
   .container {
     width: 50%;
     max-width: 500px;
-    animation: zoom 0.5s forwards;
 
     &.dezoom {
       animation: dezoom 0.5s forwards;
@@ -21,20 +20,8 @@
   }
 }
 
-@keyframes zoom {
-  from {
-    transform: scale3d(0, 0, 0);
-  }
-  to {
-    transform: scale3d(1, 1, 1);
-  }
-}
-@keyframes dezoom {
 
-  to {
-    transform: scale3d(0, 0, 0);
-  }
-}
+
 
 @keyframes fadeIn {
   from {
