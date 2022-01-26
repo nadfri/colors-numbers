@@ -8,17 +8,12 @@ export default function Number({
   number: number;
   handleClick?: any;
 }) {
-  const style = handleClick
-    ? { color: colorsOfNumbers[number - 1] }
-    : {
-        color: colorsOfNumbers[number - 1],
-        fontSize: "clamp(35vw,50vw,400px)",
-      };
+
 
   return (
     <div
-      className="Number"
-      style={style}
+      className="Number circle number"
+      style={{ color: colorsOfNumbers[number - 1] }}
       onMouseUp={handleClick}
       onTouchStart={handleClick}
       onTouchEnd={(e) => e.preventDefault()}

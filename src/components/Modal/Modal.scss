@@ -9,6 +9,7 @@
   .container {
     width: 70%;
     max-width: 500px;
+    font-size: 20rem;
 
     &.dezoom {
       animation: dezoom 0.5s forwards;
@@ -19,9 +20,6 @@
     animation: fadeOut 0.5s forwards;
   }
 }
-
-
-
 
 @keyframes fadeIn {
   from {
@@ -42,3 +40,13 @@
     background-color: rgba(0, 0, 0, 0);
   }
 }
+
+@media screen and (max-width: 600px) {
+  .Modal {
+    .container {
+      font-size: 10rem;
+    }
+  }
+}
+  
+

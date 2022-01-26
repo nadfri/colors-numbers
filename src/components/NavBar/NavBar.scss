@@ -1,3 +1,49 @@
-.NavBar{
-  background-color: indianred;
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .links {
+    display: flex;
+    align-items: center;
+  }
+
+  .circle {
+    width: 50px;
+    margin: 2px;
+  }
+
+  .container-numbers {
+    display: flex;
+    font-size: 4rem;
+    margin-left: 10px;
+    line-height: 0;
+
+    .number {
+      margin: 0 1px;
+    }
+
+    :nth-child(1) {
+      color: blue;
+    }
+    :nth-child(2) {
+      color: red;
+    }
+    :nth-child(3) {
+      color: lime;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .NavBar {
+    .circle {
+      width: 20px;
+      height: 20px;
+    }
+    .container-numbers {
+      font-size: 1.5rem;
+      margin-left: 5px;
+    }
+  }
 }

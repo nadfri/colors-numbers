@@ -11,10 +11,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   /*Prevent text select*/
   user-select: none;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  overflow: hidden;
 }
 
 * {
@@ -39,25 +36,53 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding: 0 5px;
+  font-size: 10rem;
 }
 
-.logoLink{
+.circle{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #009688;
-  border-radius: 50px;
-  width: 80%;
-  max-width: 500px;
-  height: 100px;
-  margin: 25px;
-  box-shadow: 0 0 10px 1px #404040;
 
-  div {
-    font-size: 2.5rem !important;
-    width: 50px;
-    margin: 5px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 0px #ffffff;
+
+  animation: zoom 1s forwards;
+  cursor: pointer;
+
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    filter: blur(1px);
+    transform: rotateZ(-30deg);
+
+    background: radial-gradient(
+      circle at 50% 80%,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0) 74%,
+      white 80%,
+      white 84%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
+}
+
+.number{
+  font-family: "Titan One", cursive;
+  -webkit-text-stroke: 1px white;
+}
+
+.active {
+  filter: grayscale(1);
+  transition: all 0.5s;
 }
 
 /*Animations*/
@@ -73,5 +98,12 @@ a {
 @keyframes dezoom {
   to {
     transform: scale3d(0, 0, 0) rotate(-360deg);
+  }
+}
+
+/*Media queries*/
+@media screen and (max-width: 600px) {
+  .grid {
+    font-size: 4.6rem;
   }
 }

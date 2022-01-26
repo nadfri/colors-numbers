@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
-import Circle from '../Circle/Circle';
+import "./LogoColors.scss";
+
 
 export default function LogoColors() {
   return (
-    <NavLink to="colors" className="logoLink">
-      <Circle backgroundColor="red" />
-      <Circle backgroundColor="yellow" />
-      <Circle backgroundColor="lime" />
+    <NavLink to="colors" className="LogoColors">
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
     </NavLink>
   );
 }
