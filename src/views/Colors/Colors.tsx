@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Circle from "../../components/Circle/Circle";
 import Modal from "../../components/Modal/Modal";
 import { colorsOfCircles } from "../../utils/arrayOfColors";
 
 export default function Colors() {
-
-
   const [colorSelect, setColorSelect] = useState<string>("");
   const [showModal, setShowModal] = useState<boolean>(false);
 
   function openModal(color: string) {
     setColorSelect(color);
     setShowModal(true);
+    new Audio(`/voices/fr/colors/${color}.m4a`).play();
   }
 
   function closeModal() {
@@ -24,10 +23,9 @@ export default function Colors() {
         <Circle
           key={index}
           backgroundColor={color}
-          handleClick={()=> openModal(color)}
+          handleClick={() => openModal(color)}
         />
       ))}
-
 
       {showModal && (
         <Modal closeModal={closeModal}>

@@ -1,9 +1,38 @@
 .Number {
   font-family: "Titan One", cursive;
-  font-size: 5rem;
+  font-size: 4.6rem;
   -webkit-text-stroke: 1px white;
   cursor: pointer;
   animation: zoom 1s forwards;
+  box-shadow: 0px 0px 5px 0px #ffffff;
+
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #009688;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    filter: blur(1px);
+    transform: rotateZ(-30deg);
+
+    background: radial-gradient(
+      circle at 50% 80%,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0) 74%,
+      white 80%,
+      white 84%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
 }
 
 @media screen and (min-width: 600px) {

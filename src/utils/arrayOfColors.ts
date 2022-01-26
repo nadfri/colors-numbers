@@ -2,8 +2,8 @@ export const colorsOfCircles = [
   "red",
   "magenta",
   "orange",
-  "#ffd59e",
-  "#7f3b1e",
+  "tan",
+  "sienna",
   "yellow",
   "lime",
   "blue",
@@ -12,6 +12,7 @@ export const colorsOfCircles = [
   "gray",
   "black",
 ];
+
 
 export const colorsOfNumbers = [
   "red",

@@ -10,13 +10,16 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <main>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Menu />} />
           <Route path="/colors" element={<Colors />} />
           <Route path="/numbers" element={<Numbers />} />
+          <Route path="*" element={<Menu />} />
         </Routes>
       </BrowserRouter>
+      </main>
     </div>
   );
 }
