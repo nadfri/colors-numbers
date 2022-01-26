@@ -1,27 +1,10 @@
 import "./Circle.scss";
 
-export default function Circle({
-  backgroundColor,
-  handleClick,
-}: {
-  backgroundColor: string;
-  handleClick?: any;
-}) {
-  //Change style to match backgroundColor
-  let style: object;
-  backgroundColor === "black"
-    ? (style = {
-        backgroundColor: backgroundColor,
-        border: " solid white 4px",
-      })
-    : (style = {
-        backgroundColor: backgroundColor,
-        border: " solid black 4px",
-      });
-
+export default function Circle({ backgroundColor, handleClick }: { backgroundColor: string; handleClick?: any;}) 
+{
   return (
     <div
-      style={style}
+      style={{ backgroundColor }}
       className="Circle"
       onMouseUp={handleClick}
       onTouchStart={handleClick}

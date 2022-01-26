@@ -41,6 +41,25 @@ a {
   padding: 0 5px;
 }
 
+.logoLink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #009688;
+  border-radius: 50px;
+  width: 80%;
+  max-width: 500px;
+  height: 100px;
+  margin: 25px;
+  box-shadow: 0 0 10px 1px #404040;
+
+  div {
+    font-size: 2.5rem !important;
+    width: 50px;
+    margin: 5px;
+  }
+}
+
 /*Animations*/
 @keyframes zoom {
   from {

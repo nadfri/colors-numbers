@@ -1,14 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Logo123.scss";
-
+import { NavLink } from "react-router-dom";
+import Number from "../Number/Number";
 
 export default function Logo123() {
   return (
-    <Link to="numbers" className="Logo123">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-    </Link>
+    <NavLink to="numbers" className="logoLink">
+      <Number number={1} />
+      <Number number={2} />
+      <Number number={3} />
+    </NavLink>
   );
 }
