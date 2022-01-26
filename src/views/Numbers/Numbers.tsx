@@ -10,6 +10,7 @@ export default function Numbers() {
   function openModal(number: number) {
     setNumber(number);
     setShowModal(true);
+    new Audio(`/voices/fr/numbers/${number}.m4a`).play();
   }
 
   function closeModal() {
