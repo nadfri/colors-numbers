@@ -5,7 +5,7 @@ export default function Circle({
   handleClick,
 }: {
   backgroundColor: string;
-  handleClick?: any
+  handleClick?: any;
 }) {
   //Change style to match backgroundColor
   let style: object;
@@ -24,7 +24,8 @@ export default function Circle({
       style={style}
       className="Circle"
       onMouseUp={handleClick}
-      onTouchEnd={handleClick}
+      onTouchStart={handleClick}
+      onTouchEnd={(e) => e.preventDefault()}
     ></div>
   );
 }

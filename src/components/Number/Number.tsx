@@ -20,7 +20,8 @@ export default function Number({
       className="Number"
       style={style}
       onMouseUp={handleClick}
-      onTouchEnd={handleClick}
+      onTouchStart={handleClick}
+      onTouchEnd={(e) => e.preventDefault()}
     >
       {number}
     </div>

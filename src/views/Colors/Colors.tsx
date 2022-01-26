@@ -9,13 +9,12 @@ export default function Colors() {
   const [colorSelect, setColorSelect] = useState<string>("");
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  function openModal(e: Event, color: string) {
-    e.preventDefault();
+  function openModal(color: string) {
     setColorSelect(color);
     setShowModal(true);
   }
 
-  function handleCloseModal() {
+  function closeModal() {
     setShowModal(false);
   }
 
@@ -25,13 +24,13 @@ export default function Colors() {
         <Circle
           key={index}
           backgroundColor={color}
-          handleClick={(e: Event) => openModal(e, color)}
+          handleClick={()=> openModal(color)}
         />
       ))}
 
-      {/* {showModal && <Modal color={color} handleCloseModal={handleCloseModal}/>}  */}
+
       {showModal && (
-        <Modal handleCloseModal={handleCloseModal}>
+        <Modal closeModal={closeModal}>
           <Circle backgroundColor={colorSelect} />
         </Modal>
       )}
