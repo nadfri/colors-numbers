@@ -6,6 +6,13 @@
     height: 50px;
     margin-left: 10px;
     border-radius: 5px;
+    box-shadow: 0 0 1px 0 white;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+
+  .grayscale {
+    filter: grayscale(1);
   }
 }
 

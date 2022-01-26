@@ -8,8 +8,6 @@ export default function Number({
   number: number;
   handleClick?: any;
 }) {
-
-
   return (
     <div
       className="Number circle number"
