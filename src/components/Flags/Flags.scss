@@ -1,0 +1,19 @@
+.Flags {
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Flags {
+    img {
+      height: 20px;
+      margin-left: 5px;
+    }
+  }
+}

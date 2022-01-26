@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Logo123.scss";
 
-
 export default function Logo123() {
   return (
     <NavLink to="numbers" className="Logo123">

@@ -1,6 +1,7 @@
 import "./NavBar.scss";
 import LogoColors from "../LogoColors/LogoColors";
 import { NavLink } from "react-router-dom";
+import Flags from "../Flags/Flags";
 
 export default function NavBar() {
   return (
@@ -13,7 +14,7 @@ export default function NavBar() {
           <div className="number">3</div>
         </NavLink>
       </div>
-      <div className="flags"></div>
+      <Flags />
     </div>
   );
 }
