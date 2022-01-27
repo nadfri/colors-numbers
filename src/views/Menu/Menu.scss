@@ -9,18 +9,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #009688;
-    border-radius: 50px;
-    width: 80%;
-    max-width: 500px;
-    height: 100px;
-    margin: 25px;
-    box-shadow: 0 0 10px 1px #404040;
+    margin: 50px;
 
     div {
-      font-size: 2.5rem;
-      width: 50px;
+      font-size: 5rem;
+      width: 100px;
       margin: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Menu {
+    .logoLink {
+      div {
+        font-size: 2.5rem;
+        width: 50px;
+        margin: 5px;
+      }
     }
   }
 }
