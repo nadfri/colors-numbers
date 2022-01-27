@@ -4,6 +4,18 @@
   align-items: center;
   padding: 2px;
 
+  a {
+    filter: grayscale(1);
+    transition: all 0.5s;
+  }
+
+  a.active {
+    filter: none;
+    svg {
+      fill: gray;
+    }
+  }
+
   .links {
     display: flex;
     align-items: center;
@@ -39,11 +51,11 @@
 @media screen and (max-width: 600px) {
   .NavBar {
     .circle {
-      width: 20px;
-      height: 20px;
+      width: 25px;
+      height: 25px;
     }
     .container-numbers {
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin-left: 5px;
     }
   }

@@ -7,7 +7,7 @@ export default function Flags() {
 
   useEffect(() => {
     const imgs = document.querySelectorAll("img");
-    console.log(lang);
+
     imgs.forEach((img) => {
       if (img.alt !== lang) img.classList.add("grayscale");
       else img.classList.remove("grayscale");
