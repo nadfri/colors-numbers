@@ -11,7 +11,7 @@ body {
   /*Prevent text select*/
   user-select: none;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(61,178,255,1) 0%, rgba(46,59,157,1) 100%);
+  background: linear-gradient(180deg, #3db2ff 0%, rgba(46,59,157,1) 100%);
 }
 
 * {
@@ -34,8 +34,8 @@ a {
   display: grid;
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 0 5px;
+  gap: 50px;
+  padding: 0 50px;
   font-size: 10rem;
 }
 
@@ -47,7 +47,7 @@ a {
 
   aspect-ratio: 1;
   border-radius: 50%;
-  box-shadow: 0px 0px 5px 0px #ffffff;
+  box-shadow: 0px 0px 5px 0px #282828;
   background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 100%);
 
   animation: zoom 1s forwards;
@@ -78,6 +78,7 @@ a {
 .number {
   font-family: "Titan One", cursive;
   -webkit-text-stroke: 1px white;
+  text-shadow: 1px 1px 5px #282828;
 }
 
 
@@ -102,5 +103,7 @@ a {
 @media screen and (max-width: 600px) {
   .grid {
     font-size: 4.6rem;
+    gap:10px;
+    padding: 0 5px;
   }
 }

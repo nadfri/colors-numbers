@@ -24,7 +24,7 @@ export const colorsOfNumbers = [
   "lime",
   "blue",
   "indigo",
-  "crimson",
+  "dimgray",
   "yellowgreen",
   "violet",
 ];
