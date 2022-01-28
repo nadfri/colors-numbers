@@ -7,8 +7,19 @@ import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LangContext } from "../utils/LangContext";
 
+
 function App() {
-  const [lang, setLang] = useState("fr");
+
+  let defautLang = navigator.language.split("-")[0];
+  console.log(defautLang);
+
+  if (defautLang != "fr" && defautLang != "ar") {
+    defautLang = "en";
+  }
+
+  console.log(defautLang);
+
+  const [lang, setLang] = useState(defautLang);
 
   return (
     <div className="App">
