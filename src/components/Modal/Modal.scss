@@ -9,6 +9,7 @@
 
   .circle{
     box-shadow: 0px 0px 10px 1px #ffffff;
+    animation: zoom 1s forwards, borderRadius 1s forwards;
   }
 
   .number{

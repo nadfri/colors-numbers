@@ -54,7 +54,7 @@ a {
     rgba(0, 0, 0, 0.5) 100%
   );
 
-  animation: zoom 1s forwards, borderRadius 1s forwards;
+  animation: zoom 1s forwards;
   cursor: pointer;
 
   &:after {
@@ -106,7 +106,7 @@ a {
 
 @keyframes dezoom {
   to {
-    transform: scale3d(0, 0, 0) rotate(-360deg);
+    transform: scale3d(0, 0, 0) rotate3d(-360deg);
   }
 }
 
