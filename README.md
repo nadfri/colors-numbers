@@ -5,7 +5,7 @@ Web App to learn colors and numbers for kids, can be installed on Android with C
 
 ## Tech Stack
 
-`React, TypeScript, Sass, PWA`
+`React, TypeScript, Sass, PWA, Netlify`
 
 ## Link to see the App
 
