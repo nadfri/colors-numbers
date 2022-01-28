@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import NavBar from "../components/NavBar/NavBar";
 import Menu from "../views/Menu/Menu";
 import Colors from "../views/Colors/Colors";
@@ -10,13 +10,8 @@ import { LangContext } from "../utils/LangContext";
 
 function App() {
 
-  let defautLang = navigator.language.split("-")[0];
-
-  if (defautLang != "fr" && defautLang != "ar") {
-    defautLang = "en";
-  }
-
-  const [lang, setLang] = useState(defautLang);
+  const defaultLang = useContext(LangContext).lang;
+  const [lang, setLang] = useState(defaultLang);
 
   return (
     <div className="App">

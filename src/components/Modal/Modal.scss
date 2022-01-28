@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
   animation: fadeIn 0.5s forwards;
 
   .circle{
@@ -26,26 +27,6 @@
 
   &.fadeOut {
     animation: fadeOut 0.5s forwards;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    background-color: rgba(0, 0, 0, 0);
-  }
-
-  to {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-  to {
-    background-color: rgba(0, 0, 0, 0);
   }
 }
 

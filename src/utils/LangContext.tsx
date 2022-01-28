@@ -5,4 +5,11 @@ type context = {
   setLang: (lang: string) => void;
 };
 
-export const LangContext = createContext<context>({ lang: "fr", setLang: () => {} });
+const arrayOfLanguages = ["fr", "en", "ar"];
+let defaultLang = navigator.language.split("-")[0];
+defaultLang = arrayOfLanguages.includes(defaultLang) ? defaultLang : "en";
+
+export const LangContext = createContext<context>({
+  lang: defaultLang,
+  setLang: () => {},
+});

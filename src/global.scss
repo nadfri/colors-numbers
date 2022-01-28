@@ -11,7 +11,7 @@ body {
   /*Prevent text select*/
   user-select: none;
   overflow: hidden;
-  background: linear-gradient(180deg, #3db2ff 0%, rgba(46,59,157,1) 100%);
+  background: linear-gradient(180deg, #3db2ff 0%, rgba(46, 59, 157, 1) 100%);
 }
 
 * {
@@ -48,9 +48,13 @@ a {
   aspect-ratio: 1;
   border-radius: 50%;
   box-shadow: 0px 0px 5px 0px #282828;
-  background: linear-gradient(180deg, rgba(255,255,255,0) 30%, rgba(0,0,0,0.5) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 
-  animation: zoom 1s forwards,borderRadius 1s  forwards;
+  animation: zoom 1s forwards, borderRadius 1s forwards;
   cursor: pointer;
 
   &:after {
@@ -81,8 +85,6 @@ a {
   text-shadow: 1px 1px 5px #282828;
 }
 
-
-
 /*Animations*/
 @keyframes zoom {
   from {
@@ -101,8 +103,6 @@ a {
     border-radius: 50%;
   }
 }
-  
-
 
 @keyframes dezoom {
   to {
@@ -110,11 +110,27 @@ a {
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
 /*Media queries*/
 @media screen and (max-width: 600px) {
   .grid {
     font-size: 4.6rem;
-    gap:10px;
+    gap: 10px;
     padding: 0 5px;
   }
 }
