@@ -11,13 +11,10 @@ import { LangContext } from "../utils/LangContext";
 function App() {
 
   let defautLang = navigator.language.split("-")[0];
-  console.log(defautLang);
 
   if (defautLang != "fr" && defautLang != "ar") {
     defautLang = "en";
   }
-
-  console.log(defautLang);
 
   const [lang, setLang] = useState(defautLang);
 
