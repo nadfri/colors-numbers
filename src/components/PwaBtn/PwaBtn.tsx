@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import "./PwaBtn.scss";
-import { installationTXT } from "../../utils/traduction";
+import { traduction } from "../../utils/traduction";
 import { LangContext } from "../../utils/LangContext";
 
 export default function PwaBtn() {
@@ -9,7 +9,7 @@ export default function PwaBtn() {
 
   const { lang } = useContext(LangContext);
 
-  const text:string = installationTXT[lang as keyof object];
+  const text:string = traduction[lang as keyof object];
 
   useEffect(() => {
     const handler = (event: Event) => {
@@ -20,7 +20,7 @@ export default function PwaBtn() {
         setPromptInstall(event);
       }, 300);
 
-      setTimeout(() => setSupportsPWA(false), 7000);
+      setTimeout(() => setSupportsPWA(false), 5000);
     };
 
     window.addEventListener("beforeinstallprompt", handler);
