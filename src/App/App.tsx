@@ -6,6 +6,7 @@ import Numbers from "../views/Numbers/Numbers";
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LangContext } from "../utils/LangContext";
+import PwaBtn from "../components/PwaBtn/PwaBtn";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             </Routes>
           </main>
         </BrowserRouter>
+      <PwaBtn/>
       </LangContext.Provider>
     </div>
   );
