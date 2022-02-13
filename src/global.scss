@@ -47,7 +47,7 @@ a {
 
   aspect-ratio: 1;
   max-width: 170px;
-  
+
   border-radius: 50%;
   box-shadow: 0px 0px 5px 0px #282828;
   background: linear-gradient(
@@ -93,23 +93,13 @@ a {
     transform: scale3d(0, 0, 0);
   }
   to {
-    transform: scale3d(1, 1, 1) rotate3d(0,0,1,360deg);
-  }
-}
-
-@keyframes borderRadius {
-  from {
-    border-radius: 0px;
-  }
-  to {
-    border-radius: 50%;
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 360deg);
   }
 }
 
 @keyframes dezoom {
-  
   to {
-    transform: scale3d(0, 0, 0) rotate3d(0,0,1,-360deg);
+    transform: scale3d(0, 0, 0) rotate3d(0, 0, 1, -360deg);
   }
 }
 
