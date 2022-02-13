@@ -24,3 +24,10 @@
 .slide {
   transform: translateY(0%);
 }
+
+
+@media (min-width: 768px) {
+  .PwaBtn {
+    display: none;
+  }
+}
