@@ -1,11 +1,11 @@
-import { useState, useContext } from "react";
-import Circle from "../../components/Circle/Circle";
-import Modal from "../../components/Modal/Modal";
-import { colorsOfCircles } from "../../utils/arrayOfColors";
-import { LangContext } from "../../utils/LangContext";
+import { useState, useContext } from 'react';
+import Circle from '../../components/Circle/Circle';
+import Modal from '../../components/Modal/Modal';
+import { colorsOfCircles } from '../../utils/arrayOfColors';
+import { LangContext } from '../../Context/LangContext';
 
 export default function Colors() {
-  const [colorSelect, setColorSelect] = useState<string>("");
+  const [colorSelect, setColorSelect] = useState<string>('');
   const [showModal, setShowModal] = useState<boolean>(false);
 
   const { lang } = useContext(LangContext);
@@ -13,7 +13,7 @@ export default function Colors() {
   function openModal(color: string) {
     setColorSelect(color);
     setShowModal(true);
-    new Audio(`/voices/${lang}/colors/${color}.m4a`).play();
+    new Audio(`/voices/${lang}/colors/${color}.mp3`).play();
   }
 
   function closeModal() {
@@ -21,7 +21,7 @@ export default function Colors() {
   }
 
   return (
-    <div className="grid">
+    <div className='grid'>
       {colorsOfCircles.map((color, index) => (
         <Circle
           key={index}

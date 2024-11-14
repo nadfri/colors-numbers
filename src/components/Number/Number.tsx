@@ -1,5 +1,5 @@
-import "./Number.scss";
-import { colorsOfNumbers } from "../../utils/arrayOfColors";
+import './Number.scss';
+import { colorsOfNumbers } from '../../utils/arrayOfColors';
 
 export default function Number({
   number,
@@ -10,12 +10,11 @@ export default function Number({
 }) {
   return (
     <div
-      className="Number circle number"
+      className='Number circle number'
       style={{ color: colorsOfNumbers[number - 1] }}
       onMouseUp={handleClick}
       onTouchStart={handleClick}
-      onTouchEnd={(e) => e.preventDefault()}
-    >
+      onTouchEnd={(e) => e.preventDefault()}>
       {number}
     </div>
   );

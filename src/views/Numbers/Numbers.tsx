@@ -1,7 +1,7 @@
-import { useState, useContext } from "react";
-import Modal from "../../components/Modal/Modal";
-import Number from "../../components/Number/Number";
-import { LangContext } from "../../utils/LangContext";
+import { useState, useContext } from 'react';
+import Modal from '../../components/Modal/Modal';
+import Number from '../../components/Number/Number';
+import { LangContext } from '../../Context/LangContext';
 
 export default function Numbers() {
   const [number, setNumber] = useState<number>(0);
@@ -13,7 +13,7 @@ export default function Numbers() {
   function openModal(number: number) {
     setNumber(number);
     setShowModal(true);
-    new Audio(`/voices/${lang}/numbers/${number}.m4a`).play();
+    new Audio(`/voices/${lang}/numbers/${number}.mp3`).play();
   }
 
   function closeModal() {
@@ -21,7 +21,7 @@ export default function Numbers() {
   }
 
   return (
-    <div className="grid">
+    <div className='grid'>
       {numbers.map((number) => (
         <Number key={number} number={number} handleClick={() => openModal(number)} />
       ))}
