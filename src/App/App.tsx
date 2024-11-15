@@ -1,20 +1,16 @@
 import './App.scss';
-import { useState, useContext } from 'react';
 import NavBar from '../components/NavBar/NavBar';
 import Menu from '../views/Menu/Menu';
 import Colors from '../views/Colors/Colors';
 import Numbers from '../views/Numbers/Numbers';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { LangContext } from '../Context/LangContext';
+import { LangProvider } from '../Context/LangContext';
 import PwaBtn from '../components/PwaBtn/PwaBtn';
 
 function App() {
-  const defaultLang = useContext(LangContext).lang;
-  const [lang, setLang] = useState(defaultLang);
-
   return (
     <div className='App'>
-      <LangContext.Provider value={{ lang, setLang }}>
+      <LangProvider>
         <BrowserRouter>
           <NavBar />
           <main>
@@ -27,7 +23,7 @@ function App() {
           </main>
         </BrowserRouter>
         <PwaBtn />
-      </LangContext.Provider>
+      </LangProvider>
     </div>
   );
 }

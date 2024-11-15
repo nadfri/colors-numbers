@@ -1,14 +1,14 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import Modal from '../../components/Modal/Modal';
 import Number from '../../components/Number/Number';
-import { LangContext } from '../../Context/LangContext';
+import { useLang } from '../../Context/LangContext';
 
 export default function Numbers() {
   const [number, setNumber] = useState<number>(0);
   const [showModal, setShowModal] = useState<boolean>(false);
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-  const { lang } = useContext(LangContext);
+  const { lang } = useLang();
 
   function openModal(number: number) {
     setNumber(number);

@@ -1,13 +1,13 @@
-import { useState, useEffect, useContext } from 'react';
 import './PwaBtn.scss';
+import { useState, useEffect } from 'react';
 import { traduction } from '../../utils/traduction';
-import { LangContext } from '../../Context/LangContext';
+import { useLang } from '../../Context/LangContext';
 
 export default function PwaBtn() {
   const [supportsPWA, setSupportsPWA] = useState(false);
   const [promptInstall, setPromptInstall] = useState<any | null>(null);
 
-  const { lang } = useContext(LangContext);
+  const { lang } = useLang();
 
   const text: string = traduction[lang as keyof object];
 

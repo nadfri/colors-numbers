@@ -1,9 +1,9 @@
 import './Flags.scss';
-import { useContext, useEffect } from 'react';
-import { LangContext } from '../../Context/LangContext';
+import { useEffect } from 'react';
+import { useLang } from '../../Context/LangContext';
 
 export default function Flags() {
-  const { lang, setLang } = useContext(LangContext);
+  const { lang, setLang } = useLang();
 
   useEffect(() => {
     const imgs = document.querySelectorAll('img');

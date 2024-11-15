@@ -1,14 +1,14 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import Circle from '../../components/Circle/Circle';
 import Modal from '../../components/Modal/Modal';
 import { colorsOfCircles } from '../../utils/arrayOfColors';
-import { LangContext } from '../../Context/LangContext';
+import { useLang } from '../../Context/LangContext';
 
 export default function Colors() {
   const [colorSelect, setColorSelect] = useState<string>('');
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  const { lang } = useContext(LangContext);
+  const { lang } = useLang();
 
   function openModal(color: string) {
     setColorSelect(color);
