@@ -71,7 +71,11 @@ registerRoute(
 );
 
 registerRoute(
-  ({ url }) => url.pathname.startsWith('/voices/') && url.pathname.endsWith('.mp3'),
+  //MP3 files
+  ({ url }) => {
+    const voicesPattern = /^\/voices\/[a-z]{2}\/(colors|numbers)\/.*\.mp3$/;
+    return voicesPattern.test(url.pathname);
+  },
   new CacheFirst({
     cacheName: 'mp3-cache',
     plugins: [
