@@ -1,38 +1,49 @@
 import './PwaBtn.scss';
-import { useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { traduction } from '../../utils/traduction';
 import { useLang } from '../../Context/LangContext';
 
+const DURATION = 5000;
+
 export default function PwaBtn() {
-  const [supportsPWA, setSupportsPWA] = useState(false);
-  const [promptInstall, setPromptInstall] = useState<any | null>(null);
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+  const promptRef = useRef<BeforeInstallPromptEvent | null>(null);
+  const timeoutId = useRef<NodeJS.Timeout | undefined>();
 
   const { lang } = useLang();
 
   const text: string = traduction[lang as keyof object];
 
-  useEffect(() => {
-    const handler = (event: Event) => {
-      event.preventDefault();
-      console.log('PWA:Installation Possible...');
-      setTimeout(() => {
-        setSupportsPWA(true);
-        setPromptInstall(event);
-      }, 300);
+  const [isVisible, setIsVisible] = useState(false);
 
-      setTimeout(() => setSupportsPWA(false), 5000);
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (event: Event) => {
+      const beforeInstallPromptEvent = event as BeforeInstallPromptEvent;
+      beforeInstallPromptEvent.preventDefault();
+      promptRef.current = beforeInstallPromptEvent;
+
+      setIsVisible(true);
+      timeoutId.current = setTimeout(() => setIsVisible(false), DURATION);
     };
 
-    window.addEventListener('beforeinstallprompt', handler);
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 
-    return () => window.removeEventListener('beforeinstallprompt', handler);
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      if (timeoutId.current) clearTimeout(timeoutId.current);
+    };
   }, []);
 
-  const click = () => promptInstall.prompt();
+  const handleInstall = () => {
+    promptRef.current?.prompt();
+  };
+
+  if (isIOS) return null;
 
   return (
-    <div className={supportsPWA ? 'PwaBtn slide' : 'PwaBtn'} onClick={click}>
+    <button className={isVisible ? 'PwaBtn slide' : 'PwaBtn'} onClick={handleInstall}>
       {text}
-    </div>
+    </button>
   );
 }
