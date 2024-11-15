@@ -29,9 +29,7 @@ export default function Modal({
   return (
     <div
       className='Modal'
-      onTouchStart={handleCloseModal}
-      onMouseUp={handleCloseModal}
-      onTouchEnd={(e) => e.preventDefault()}
+      onClick={handleCloseModal}
       ref={modalRef}>
       <div className='container' ref={containerRef}>
         {children}

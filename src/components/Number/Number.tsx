@@ -6,15 +6,13 @@ export default function Number({
   handleClick,
 }: {
   number: number;
-  handleClick?: any;
+  handleClick?: () => void;
 }) {
   return (
     <div
       className='Number circle number'
       style={{ color: colorsOfNumbers[number - 1] }}
-      onMouseUp={handleClick}
-      onTouchStart={handleClick}
-      onTouchEnd={(e) => e.preventDefault()}>
+      onClick={handleClick}>
       {number}
     </div>
   );
