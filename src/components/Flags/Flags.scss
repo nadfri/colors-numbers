@@ -1,10 +1,9 @@
 .Flags {
   display: flex;
-  align-items: center;
+  gap: 1rem;
 
   img {
     height: 50px;
-    margin-left: 10px;
     border-radius: 5px;
     box-shadow: 0px 0px 4px 0px #282828;
     transition: all 0.5s;
@@ -15,13 +14,12 @@
   .opacity {
     opacity: 0.5;
   }
-}
 
-@media screen and (max-width: 600px) {
-  .Flags {
+  @media screen and (max-width: 600px) {
+    gap: 6px;
+
     img {
       height: 25px;
-      margin-left: 7px;
     }
   }
 }

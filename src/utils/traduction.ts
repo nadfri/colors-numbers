@@ -3,4 +3,5 @@ export const traduction= {
   en: "Click here to install the App 🚀",
   ar: "🚀 انقر هنا لتثبيت التطبيق",
   it: "Clicca qui per installare l'App 🚀",
+  jp: "アプリをインストールするにはここをクリックしてください 🚀",
 }

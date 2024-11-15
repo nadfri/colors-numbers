@@ -5,7 +5,7 @@ type context = {
   setLang: (lang: string) => void;
 };
 
-const arrayOfLanguages = ['fr', 'en', 'ar', 'it'];
+const arrayOfLanguages = ['fr', 'en', 'ar', 'it', 'jp'];
 
 const langFromLocalStorage = localStorage.getItem('lang');
 

@@ -25,6 +25,7 @@ export default function Flags() {
       <img src='/img/en.svg' alt='en' onClick={() => handleLang('en')} />
       <img src='/img/ar.svg' alt='ar' onClick={() => handleLang('ar')} />
       <img src='/img/it.svg' alt='it' onClick={() => handleLang('it')} />
+      <img src='/img/jp.svg' alt='jp' onClick={() => handleLang('jp')} />
     </div>
   );
 }

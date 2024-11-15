@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2px;
+  padding: 2px 4px;
+  gap: 4px;
 
   a {
     filter: grayscale(1);
@@ -19,6 +20,7 @@
   .links {
     display: flex;
     align-items: center;
+    gap: 1rem;
   }
 
   .circle {
@@ -29,8 +31,9 @@
   .container-numbers {
     display: flex;
     font-size: 4rem;
-    margin-left: 10px;
     line-height: 0;
+    position: relative;
+    bottom: 1px;
 
     .number {
       margin: 0 1px;
@@ -46,17 +49,18 @@
       color: lime;
     }
   }
-}
 
-@media screen and (max-width: 600px) {
-  .NavBar {
+  @media screen and (max-width: 600px) {
+    .links {
+      gap: 6px;
+    }
+
     .circle {
       width: 25px;
       height: 25px;
     }
     .container-numbers {
       font-size: 2rem;
-      margin-left: 5px;
     }
   }
 }
