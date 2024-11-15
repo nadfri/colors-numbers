@@ -7,7 +7,7 @@
 
   a {
     filter: grayscale(1);
-    transition: all 0.5s;
+    transition: filter 0.5s;
   }
 
   a.active {
