@@ -4,10 +4,10 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
     ],
     "allowJs": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true, 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -18,9 +18,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
   },
   "include": [
     "src"
+, "scripts/generateMp3List.js"  ],
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*"
   ]
 }

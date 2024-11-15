@@ -12,8 +12,8 @@ import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
-import { NetworkFirst, CacheFirst } from 'workbox-strategies';
-import { CacheableResponsePlugin } from 'workbox-cacheable-response';
+import { CacheFirst } from 'workbox-strategies';
+import mp3FileList from './mp3FileList.json';
 
 declare const self: ServiceWorkerGlobalScope;
 
@@ -60,7 +60,7 @@ registerRoute(
   // Add in any other file extensions or routing criteria as needed.
   ({ url }) => url.pathname.startsWith('/img/'),
   // Customize this strategy as needed, e.g., by changing to CacheFirst.
-  new NetworkFirst({
+  new CacheFirst({
     cacheName: 'images',
     plugins: [
       // Ensure that once this runtime cache reaches a maximum size the
@@ -72,16 +72,10 @@ registerRoute(
 
 registerRoute(
   //MP3 files
-  ({ url }) => {
-    const voicesPattern = /^\/voices\/[a-z]{2}\/(colors|numbers)\/.*\.mp3$/;
-    return voicesPattern.test(url.pathname);
-  },
+  ({ url }) => url.pathname.endsWith('.mp3'),
   new CacheFirst({
     cacheName: 'mp3-cache',
     plugins: [
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
       new ExpirationPlugin({
         maxEntries: 200,
       }),
@@ -98,3 +92,10 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open('mp3-cache').then((cache) => {
+      return cache.addAll(mp3FileList);
+    })
+  );
+});
